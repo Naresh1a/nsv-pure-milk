@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <h1 className="text-2xl font-bold text-green-700">
+        <h1 className="text-2xl font-bold text-green-800">
           🥛 NSV Pure Milk
         </h1>
 

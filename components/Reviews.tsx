@@ -28,11 +28,11 @@ export default function Reviews() {
     <section className="py-24 bg-green-50">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold text-center text-green-900">
+        <h2 className="text-5xl font-bold text-center text-green-800">
           What Our Customers Say
         </h2>
 
-        <p className="text-center text-gray-600 mt-4 mb-16">
+        <p className="text-center text-gray-900 mt-4 mb-16">
           Freshness, Quality and Trust — Every Morning.
         </p>
 
@@ -53,7 +53,7 @@ export default function Reviews() {
                 ⭐⭐⭐⭐⭐
               </div>
 
-              <p className="text-gray-600 mt-5 italic">
+              <p className="text-gray-900 mt-5 italic">
                 "{item.review}"
               </p>
 
@@ -62,7 +62,7 @@ export default function Reviews() {
                   {item.name}
                 </h3>
 
-                <p className="text-green-700">
+                <p className="text-green-800">
                   {item.place}
                 </p>
               </div>

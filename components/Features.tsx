@@ -27,7 +27,7 @@ export default function Features() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl font-bold text-center text-green-900"
+          className="text-4xl font-bold text-center text-green-800"
         >
           Why Choose NSV Pure Milk?
         </motion.h2>
@@ -44,7 +44,7 @@ export default function Features() {
                 {feature.title}
               </h3>
 
-              <p className="text-gray-600 mt-3">
+              <p className="text-gray-900 mt-3">
                 {feature.description}
               </p>
             </div>

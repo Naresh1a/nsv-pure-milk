@@ -37,12 +37,12 @@ export default function Products() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center text-green-900"
+          className="text-5xl font-bold text-center text-green-800"
         >
           Our Products
         </motion.h2>
 
-        <p className="text-center text-gray-600 mt-4 mb-12">
+        <p className="text-center text-gray-900 mt-4 mb-12">
           Farm Fresh Dairy Products Delivered Every Morning
         </p>
 
@@ -58,7 +58,7 @@ export default function Products() {
             >
               <div className="text-6xl">{product.icon}</div>
 
-              <span className="inline-block mt-4 rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-700">
+              <span className="inline-block mt-4 rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-green-800">
                 {product.badge}
               </span>
 
@@ -66,7 +66,7 @@ export default function Products() {
                 {product.name}
               </h3>
 
-              <p className="mt-3 text-2xl font-bold text-green-700">
+              <p className="mt-3 text-2xl font-bold text-green-800">
                 {product.price}
               </p>
 
@@ -74,7 +74,7 @@ export default function Products() {
                 Subscribe
               </button>
 
-              <button className="mt-3 w-full rounded-xl border-2 border-green-600 py-3 font-semibold text-green-700 hover:bg-green-600 hover:text-white transition">
+              <button className="mt-3 w-full rounded-xl border-2 border-green-600 py-3 font-semibold text-green-800 hover:bg-green-600 hover:text-white transition">
                 Order Now
               </button>
             </motion.div>

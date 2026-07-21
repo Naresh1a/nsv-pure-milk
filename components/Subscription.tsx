@@ -25,11 +25,11 @@ export default function Subscription() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold text-center text-green-900">
+        <h2 className="text-5xl font-bold text-center text-green-800">
           Choose Your Subscription
         </h2>
 
-        <p className="text-center text-gray-600 mt-4 mb-14">
+        <p className="text-center text-gray-900 mt-4 mb-14">
           Fresh milk delivered every morning. Pause or resume anytime.
         </p>
 
@@ -50,7 +50,7 @@ export default function Subscription() {
               }`}
             >
 
-              <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-bold">
+              <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold">
                 {plan.badge}
               </span>
 
@@ -58,11 +58,11 @@ export default function Subscription() {
                 {plan.title}
               </h3>
 
-              <p className="text-green-700 font-bold text-xl mt-3">
+              <p className="text-green-800 font-bold text-xl mt-3">
                 {plan.quantity}
               </p>
 
-              <ul className="text-left mt-8 space-y-3 text-gray-600">
+              <ul className="text-left mt-8 space-y-3 text-gray-900">
                 <li>✅ Farm Fresh Milk</li>
                 <li>✅ Chilled at 4°C</li>
                 <li>✅ Daily Morning Delivery</li>

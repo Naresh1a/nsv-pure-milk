@@ -34,12 +34,12 @@ export default function Process() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center text-green-900"
+          className="text-5xl font-bold text-center text-green-800"
         >
           From Farm to Your Family
         </motion.h2>
 
-        <p className="text-center text-gray-600 mt-4 max-w-3xl mx-auto">
+        <p className="text-center text-gray-900 mt-4 max-w-3xl mx-auto">
           Every drop of NSV Pure Milk follows a carefully maintained freshness
           process to ensure quality, taste, and trust.
         </p>
@@ -61,11 +61,11 @@ export default function Process() {
                 {step.icon}
               </div>
 
-              <h3 className="text-2xl font-bold text-green-900">
+              <h3 className="text-2xl font-bold text-green-800">
                 {step.title}
               </h3>
 
-              <p className="text-gray-600 mt-4">
+              <p className="text-gray-900 mt-4">
                 {step.description}
               </p>
 
@@ -90,3 +90,4 @@ export default function Process() {
     </section>
   );
 }
+
