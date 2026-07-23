@@ -5,54 +5,54 @@ import { motion } from "framer-motion";
 const items = [
   {
     icon: "🥛",
-    title: "Farm Fresh",
+    title: "100% Farm Fresh",
     text: "Collected Fresh Every Morning",
   },
   {
     icon: "❄️",
     title: "Chilled at 4°C",
-    text: "Freshness Preserved Naturally",
+    text: "Natural Freshness Preserved",
   },
   {
     icon: "🚚",
-    title: "Morning Delivery",
-    text: "Delivered Before Breakfast",
+    title: "Before 7:00 AM",
+    text: "Guaranteed Doorstep Delivery",
   },
   {
     icon: "🌿",
-    title: "No Preservatives",
+    title: "Zero Chemicals",
     text: "Pure Milk. Nothing Added.",
   },
 ];
 
 export default function TrustBar() {
   return (
-    <section className="bg-green-700 py-6">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
+    <section className="bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 py-8 border-y border-emerald-700/50 shadow-inner">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
           {items.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15 }}
-              className="text-center text-white"
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3.5 group"
             >
-              <div className="text-4xl mb-2">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 group-hover:bg-emerald-500/20 backdrop-blur-md flex items-center justify-center text-2xl text-white shadow-xs border border-white/10 group-hover:border-emerald-400/40 transition-all duration-300 group-hover:scale-110">
                 {item.icon}
               </div>
 
-              <h3 className="font-bold text-lg">
-                {item.title}
-              </h3>
-
-              <p className="text-green-100 text-sm mt-1">
-                {item.text}
-              </p>
+              <div>
+                <h3 className="font-extrabold text-white text-base tracking-tight">
+                  {item.title}
+                </h3>
+                <p className="text-emerald-200/80 text-xs font-medium mt-0.5">
+                  {item.text}
+                </p>
+              </div>
             </motion.div>
           ))}
-
         </div>
       </div>
     </section>

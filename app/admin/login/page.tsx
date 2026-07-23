@@ -45,13 +45,20 @@ export default function AdminLoginPage() {
             Mobile Number
           </label>
 
-          <input
-            type="tel"
-            placeholder="Enter Mobile Number"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-            className="mb-6 w-full rounded-xl border border-gray-300 p-4 focus:border-green-600 focus:outline-none"
-          />
+          <div className="mb-6 flex gap-2">
+            <span className="bg-gray-100 border border-gray-300 rounded-xl px-4 py-4 text-gray-700 text-sm font-bold flex items-center shrink-0">
+              🇮🇳 +91
+            </span>
+            <input
+              type="tel"
+              inputMode="numeric"
+              maxLength={10}
+              placeholder="98765 43210"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value.replace(/\D/g, "").slice(0, 10))}
+              className="flex-1 rounded-xl border border-gray-300 p-4 focus:border-green-600 focus:outline-none font-semibold text-gray-900"
+            />
+          </div>
 
           <label className="mb-2 block font-semibold text-gray-700">
             Password

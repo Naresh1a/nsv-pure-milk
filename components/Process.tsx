@@ -1,93 +1,85 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const steps = [
-  {
-    icon: "🐄",
-    title: "Milk Collection",
-    description: "Fresh milk collected every morning from trusted dairy farms.",
-  },
-  {
-    icon: "❄️",
-    title: "Rapidly Chilled",
-    description: "Quickly chilled at 4°C to preserve freshness and quality.",
-  },
-  {
-    icon: "🧪",
-    title: "Quality Checked",
-    description: "Every batch is carefully checked before delivery.",
-  },
-  {
-    icon: "🚚",
-    title: "Morning Delivery",
-    description: "Delivered fresh to your doorstep every morning.",
-  },
-];
+import { useLanguage } from "@/lib/LanguageContext";
 
 export default function Process() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      step: "01",
+      title: t("step1Title"),
+      desc: t("step1Desc"),
+      icon: "🐄",
+      color: "border-amber-200 bg-amber-50/60 text-amber-900",
+    },
+    {
+      step: "02",
+      title: t("step2Title"),
+      desc: t("step2Desc"),
+      icon: "❄️",
+      color: "border-teal-200 bg-teal-50/60 text-teal-900",
+    },
+    {
+      step: "03",
+      title: t("step3Title"),
+      desc: t("step3Desc"),
+      icon: "🔬",
+      color: "border-emerald-200 bg-emerald-50/60 text-emerald-900",
+    },
+    {
+      step: "04",
+      title: t("step4Title"),
+      desc: t("step4Desc"),
+      icon: "🚚",
+      color: "border-amber-200 bg-amber-50/60 text-amber-900",
+    },
+  ];
+
   return (
-    <section className="py-24 bg-green-50">
-      <div className="max-w-7xl mx-auto px-6">
-
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-5xl font-bold text-center text-green-800"
-        >
-          From Farm to Your Family
-        </motion.h2>
-
-        <p className="text-center text-gray-900 mt-4 max-w-3xl mx-auto">
-          Every drop of NSV Pure Milk follows a carefully maintained freshness
-          process to ensure quality, taste, and trust.
-        </p>
-
-        <div className="grid md:grid-cols-4 gap-8 mt-16">
-
-          {steps.map((step, index) => (
-
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ y: -8 }}
-              className="bg-white rounded-3xl shadow-xl p-8 text-center"
-            >
-
-              <div className="text-6xl mb-5">
-                {step.icon}
-              </div>
-
-              <h3 className="text-2xl font-bold text-green-800">
-                {step.title}
-              </h3>
-
-              <p className="text-gray-900 mt-4">
-                {step.description}
-              </p>
-
-            </motion.div>
-
-          ))}
-
+    <section id="process" className="py-16 sm:py-24 bg-stone-50/80 text-slate-900 relative overflow-hidden border-b border-slate-200">
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 space-y-12">
+        
+        {/* SECTION HEADER */}
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="inline-block bg-emerald-100 border border-emerald-300 text-emerald-950 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-xs">
+            ⚙️ 4-Step Cold Chain Process
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900">
+            {t("processTitle")}
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base font-medium">
+            {t("processSubtitle")}
+          </p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="mt-16 bg-green-700 rounded-3xl text-center py-8 px-6"
-        >
-          <h3 className="text-3xl font-bold text-white">
-            ✅ Freshly Chilled • Quality Checked • Delivered with Care
-          </h3>
-        </motion.div>
+        {/* STEPS GRID */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((s, idx) => (
+            <motion.div
+              key={s.step}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className={`p-6 rounded-3xl border ${s.color} shadow-lg backdrop-blur-xl flex flex-col justify-between space-y-4 hover:shadow-xl transition-all`}
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-3xl">{s.icon}</span>
+                <span className="text-2xl font-black opacity-30 text-slate-700">{s.step}</span>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-slate-900">{s.title}</h3>
+                <p className="text-xs text-slate-600 leading-relaxed font-medium">{s.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
       </div>
     </section>
   );
 }
-
